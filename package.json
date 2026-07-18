@@ -1,0 +1,16 @@
+{
+  "name": "signal13-gateway",
+  "version": "1.0.0",
+  "description": "SIGNAL13 Reverse Proxy Gateway",
+  "main": "gateway.js",
+  "scripts": {
+    "start": "node gateway.js"
+  },
+  "author": "Ab13",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.21.2",
+    "http-proxy": "^1.18.1",
+    "http-proxy-middleware": "^3.0.5"
+  }
+}

@@ -1,0 +1,21 @@
+{
+    "project": "StageOnTime Test System",
+
+    "venue": "Taman Balekambang, Solo",
+
+    "eventDate": "2026-07-17",
+
+    "duration": "09:00:00",
+
+    "showDirector": "Aji Saputra",
+
+    "stageManager": "Ridwan",
+
+    "status": "ONLINE",
+
+    "rundownUrl": "https://docs.google.com/spreadsheets/d/1odZIRCgO82zJ1Ep2xhQwvb2TM6RrDxRAgb-LP7ufTEg/edit?usp=sharing",
+
+    "productionDocsUrl": "",
+
+    "version": "0.1.0"
+}

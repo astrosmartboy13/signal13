@@ -1,0 +1,26 @@
+# Dependencies
+node_modules/
+
+# Logs
+logs/
+*.log
+
+# Archives
+*.zip
+*.rar
+*.7z
+
+# Backup
+BACKUP_SIGNAL13-V1.0/
+_FREEZE_2026-07-16/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# VS Code
+.vscode/
+
+# Temporary
+*.tmp
+*.bak

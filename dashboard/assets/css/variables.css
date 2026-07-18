@@ -1,0 +1,136 @@
+/* ==========================================================
+   SIGNAL13 Dashboard
+   Design System v1.0
+========================================================== */
+
+:root {
+
+    /* ===========================
+       COLORS
+    =========================== */
+
+    --color-background: #FFE500;
+
+    --color-black: #111111;
+
+    --color-white: #FFFFFF;
+
+    --color-green: #39D353;
+
+    --color-border: rgba(17,17,17,.18);
+
+    --color-border-dark: rgba(17,17,17,.45);
+
+
+
+    /* ===========================
+       TYPOGRAPHY
+    =========================== */
+
+    --font-family: "Inter", sans-serif;
+
+    --font-light: 300;
+
+    --font-regular: 400;
+
+    --font-medium: 500;
+
+    --font-semibold: 600;
+
+    --font-bold: 700;
+
+    --font-extrabold: 800;
+
+
+
+    /* ===========================
+       FONT SIZE
+    =========================== */
+
+    --text-xs: 12px;
+
+    --text-sm: 14px;
+
+    --text-md: 16px;
+
+    --text-lg: 18px;
+
+    --text-xl: 24px;
+
+    --text-2xl: 32px;
+
+    --text-3xl: 48px;
+
+    --text-4xl: 64px;
+
+
+
+    /* ===========================
+       CONTAINER
+    =========================== */
+
+    --container-width: 1400px;
+
+
+
+    /* ===========================
+       SPACING
+    =========================== */
+
+    --space-1: 8px;
+
+    --space-2: 12px;
+
+    --space-3: 16px;
+
+    --space-4: 24px;
+
+    --space-5: 32px;
+
+    --space-6: 48px;
+
+    --space-7: 64px;
+
+    --space-8: 96px;
+
+    --space-9: 120px;
+
+
+
+    /* ===========================
+       BORDER RADIUS
+    =========================== */
+
+    --radius-sm: 8px;
+
+    --radius-md: 12px;
+
+    --radius-lg: 18px;
+
+
+
+    /* ===========================
+       BUTTON
+    =========================== */
+
+    --button-height: 76px;
+
+
+
+    /* ===========================
+       TRANSITION
+    =========================== */
+
+    --transition: .25s ease;
+
+
+
+    /* ===========================
+       Z INDEX
+    =========================== */
+
+    --z-header: 100;
+
+    --z-modal: 1000;
+
+}
