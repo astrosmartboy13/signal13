@@ -1,5 +1,7 @@
 const SIGNAL13 = {
 
+    dashboard: window.location.pathname || "/",
+
     stageTimer: "/stagetimer",
 
     backstage: "/backstage",
@@ -7,6 +9,8 @@ const SIGNAL13 = {
     timeline: "/timeline",
 
     studio: "/studio",
+
+    editor: "/editor/",
 
     rundown: ""
 

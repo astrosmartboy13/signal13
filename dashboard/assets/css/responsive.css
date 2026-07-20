@@ -1,69 +1,32 @@
 @media (max-width: 1199px) {
-    .site-header {
-        grid-template-columns: 1fr 1fr;
-    }
+  .dashboard { grid-template-columns: 240px 1fr; padding: 24px; }
+  .main-content { grid-template-columns: 1fr; }
+  .hero-card { grid-template-columns: 1fr; }
+  .quick-grid { grid-template-columns: repeat(4, 1fr); }
+}
 
-    .event-meta {
-        order: 3;
-        grid-column: 1 / -1;
-        text-align: left;
-    }
-
-    .card-grid--four,
-    .quick-access-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
+@media (max-width: 991px) {
+  .quick-grid { grid-template-columns: repeat(3, 1fr); }
 }
 
 @media (max-width: 767px) {
-    .site-header,
-    .dashboard-shell,
-    .site-footer {
-        width: min(100% - 32px, var(--content-width));
-    }
+  .dashboard { grid-template-columns: 1fr; padding: 16px; }
+  .sidebar { order: 2; width: 100%; height: auto; }
+  .content { order: 1; }
+  .site-header { grid-template-columns: 1fr; gap: 12px; padding: var(--space-4); }
+  .main-content { grid-template-columns: 1fr; }
+  .hero-card { grid-template-columns: 1fr; padding: var(--space-3); }
+  .quick-grid { grid-template-columns: repeat(2, 1fr); }
+  .bottom-grid { grid-template-columns: 1fr; }
+  .production-info .info-grid { grid-template-columns: 1fr; }
+}
 
-    .site-header,
-    .site-footer {
-        display: flex;
-        flex-direction: column;
-        align-items: stretch;
-    }
-
-    .header-status {
-        justify-content: space-between;
-        align-items: flex-start;
-    }
-
-    .datetime {
-        align-items: flex-start;
-    }
-
-    .hero-section {
-        min-height: 260px;
-        padding: var(--space-3);
-    }
-
-    .hero-section h1 {
-        font-size: 40px;
-    }
-
-    .hero-section__project {
-        font-size: 20px;
-    }
-
-    .section-header h2 {
-        font-size: 24px;
-    }
-
-    .card-grid--three,
-    .card-grid--four,
-    .quick-access-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .info-card,
-    .access-card,
-    .status-card {
-        min-height: 120px;
-    }
+@media (max-width: 575px) {
+  .quick-grid { grid-template-columns: 1fr; }
+  .site-header { padding: var(--space-3); }
+  .hero-bg { height: 280px; }
+  .hero-card { padding: var(--space-4); }
+  .header-block { padding: 16px 18px; }
+  .header-clock .current-time { font-size: 2.5rem; }
+  .hero-logo-large { width: 140px; }
 }

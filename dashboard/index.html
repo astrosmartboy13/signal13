@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>SIGNAL13 Dashboard</title>
+    <title>Pusat Kendali Semesta</title>
+    <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
 
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,187 +23,184 @@
 
     <div class="dashboard">
 
-        <!-- =========================
-             STATUS BAR
-        ========================== -->
-
-        <header class="status-bar">
-
-            <div class="status-wrapper">
-
-                <div class="status-online">
-
-                    <span class="status-text">
-                        ONLINE
-                    </span>
-
-                    <span class="status-dot"></span>
-
+        <!-- Left Sidebar -->
+        <aside id="sidebar" class="sidebar" role="navigation" aria-label="Primary navigation">
+            <div class="brand">
+                <img src="assets/images/logo-semesta.png" alt="Semesta Logo" class="brand-logo">
+                <div class="brand-details">
+                    <strong class="brand-title">SEMESTA</strong>
+                    <span class="brand-subtitle">Show Management System</span>
                 </div>
-
-                <div class="status-date">
-                    Sabtu, 18 Juli 2026
-                </div>
-
-                <div class="status-time">
-                    22:45:20
-                </div>
-
             </div>
 
-        </header>
+            <nav class="nav" aria-label="Main">
+                <ul>
+                    <li><a href="#" class="nav-link active" data-link-key="dashboard"><img src="assets/icons/dashboard.svg" alt="Dashboard icon"><span>Dashboard</span></a></li>
+                    <li><a href="#" class="nav-link" data-link-key="stageTimer"><img src="assets/icons/timer.svg" alt="Timer icon"><span>Timer</span></a></li>
+                    <li><a href="#" class="nav-link" data-link-key="backstage"><img src="assets/icons/backstage.svg" alt="Backstage icon"><span>Backstage</span></a></li>
+                    <li><a href="#" class="nav-link" data-link-key="timeline"><img src="assets/icons/timeline.svg" alt="Timeline icon"><span>Timeline</span></a></li>
+                    <li><a href="#" class="nav-link" data-link-key="studio"><img src="assets/icons/studio.svg" alt="Studio icon"><span>Studio</span></a></li>
+                    <li><a href="#" class="nav-link" data-link-key="editor"><img src="assets/icons/editor.svg" alt="Editor icon"><span>Editor</span></a></li>
+                </ul>
+            </nav>
 
-
-        <!-- =========================
-                MAIN
-        ========================== -->
-
-        <main class="main-content">
-
-
-            <!-- HERO -->
-
-            <section class="hero">
-
-                <img
-                    src="assets/images/logo-semesta.png"
-                    alt="Semesta Logo"
-                    class="hero-logo">
-
-                <h1 class="project-title">
-                    EUFORIA ART 11
-                </h1>
-
-                <div class="duration">
-
-                    <div class="duration-line"></div>
-
-                    <div class="duration-info">
-
-                        <span class="duration-label">
-                            TOTAL DURATION
-                        </span>
-
-                        <span class="duration-time">
-                            01:32:15
-                        </span>
-
+            <div class="sidebar-status">
+                <div class="system-status">
+                    <span id="sidebar-status-dot" class="status-dot"></span>
+                    <div class="status-info">
+                        <span id="sidebar-status-text" class="status-text">ONLINE</span>
+                        <span class="status-sub">All systems operational</span>
                     </div>
+                </div>
+            </div>
 
-                    <div class="duration-line"></div>
+            <div class="sidebar-footer">
+                <small>Powered by SIGNAL13</small>
+                <small class="version">v2.0.0</small>
+            </div>
+        </aside>
 
+        <div class="content">
+
+            <!-- Top Header -->
+            <header id="header" class="site-header" role="banner">
+                    <div class="header-block header-status">
+                        <span id="header-status-dot" class="status-dot" aria-hidden="true"></span>
+                        <span id="header-status-text" class="status-text">ONLINE</span>
+                    <span class="status-indicator" aria-hidden="true"></span>
                 </div>
 
-            </section>
-
-
-            <!-- LAUNCHER -->
-
-            <section class="launcher">
-
-                <a href="#" class="launcher-button">
-
-                    <img src="assets/icons/timer.svg">
-
-                    <span>Timer</span>
-
-                </a>
-
-                <a href="#" class="launcher-button">
-
-                    <img src="assets/icons/backstage.svg">
-
-                    <span>Backstage</span>
-
-                </a>
-
-                <a href="#" class="launcher-button">
-
-                    <img src="assets/icons/timeline.svg">
-
-                    <span>Timeline</span>
-
-                </a>
-
-                <a href="#" class="launcher-button">
-
-                    <img src="assets/icons/studio.svg">
-
-                    <span>Studio</span>
-
-                </a>
-
-            </section>
-
-
-            <!-- CREW -->
-
-            <section class="crew">
-
-                <div class="crew-item">
-
-                    <span class="crew-label">
-                        Show Director
-                    </span>
-
-                    <span class="crew-name">
-                        Aji Saputra
-                    </span>
-
+                <div class="header-block header-date">
+                    <time id="current-date" class="current-date">Sabtu, 18 Juli 2026</time>
                 </div>
 
-                <div class="crew-divider"></div>
+                <div class="header-block header-clock">
+                    <time id="current-time" class="current-time">22:45:20</time>
+                </div>
+            </header>
 
-                <div class="crew-item">
-
-                    <span class="crew-label">
-                        Stage Manager
-                    </span>
-
-                    <span class="crew-name">
-                        Ridwan
-                    </span>
-
+            <main id="main" class="main-content" role="main">
+                <!-- Compatibility placeholders for existing JS (visually hidden) -->
+                <div class="sr-only" aria-hidden="true">
+                    <span id="event-name">Semesta On Stage</span>
+                    <span id="project">Semesta On Stage</span>
+                    <span id="event-date" datetime="2026-07-19">2026-07-19</span>
+                    <span id="duration">05:30:00</span>
+                    <span id="director">Aji Saputra</span>
+                    <span id="stageManager">Ridwan</span>
+                    <span id="status">ONLINE</span>
+                    <span id="liveStatus">ONLINE</span>
+                    <span id="system-version">2.0.0</span>
                 </div>
 
-            </section>
+                <!-- Hero Card -->
+                <section id="hero" class="hero" aria-labelledby="project-title">
+                    <div class="hero-bg" role="img" aria-label="Background image placeholder"></div>
 
+                    <div class="hero-card">
+                        <div class="hero-left">
+                            <span class="project-badge">PROJECT</span>
+                            <h1 id="project-title" class="project-title">EUFORIA ART 11</h1>
+                            <p class="project-sub">SEMESTA ON STAGE</p>
+                            <p class="hero-venue">Venue: <span id="venue">Jakarta</span></p>
+                        </div>
 
-            <!-- QUICK LINK -->
+                        <div class="hero-center">
+                            <p class="hero-duration">Total Duration<br><strong id="total-duration">01:32:15</strong></p>
+                            <p class="hero-day">Show Day<br><strong id="show-date">2026-07-18</strong></p>
+                        </div>
 
-            <section class="quick-links">
+                        <div class="hero-right">
+                            <img src="assets/images/logo-semesta.png" alt="Semesta Logo" class="hero-logo-large">
+                        </div>
+                    </div>
+                </section>
 
-                <a href="#" class="outline-button">
+                <!-- Quick Access -->
+                <section id="quick-access" class="quick-access" aria-label="Quick Access">
+                    <h2 class="section-title">Quick Access</h2>
+                    <div class="quick-grid">
+                        <a href="#" class="card launcher-button" data-link-key="stageTimer"><img src="assets/icons/timer.svg" alt="Timer" class="launcher-icon"><span>Timer</span></a>
+                        <a href="#" class="card launcher-button" data-link-key="backstage"><img src="assets/icons/backstage.svg" alt="Backstage" class="launcher-icon"><span>Backstage</span></a>
+                        <a href="#" class="card launcher-button" data-link-key="timeline"><img src="assets/icons/timeline.svg" alt="Timeline" class="launcher-icon"><span>Timeline</span></a>
+                        <a href="#" class="card launcher-button" data-link-key="studio"><img src="assets/icons/studio.svg" alt="Studio" class="launcher-icon"><span>Studio</span></a>
+                        <a href="#" class="card launcher-button" data-link-key="editor"><img src="assets/icons/editor.svg" alt="Editor" class="launcher-icon"><span>Editor</span></a>
+                    </div>
+                </section>
 
-                    <img src="assets/icons/document.svg">
+                <!-- Information Card -->
+                <section id="production-info" class="production-info" aria-label="Production Information">
+                    <h2 class="section-title">Information</h2>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <dt>Show Director</dt>
+                            <dd id="show-director">Aji Saputra</dd>
+                        </div>
 
-                    <span>Kendali Semesta</span>
+                        <div class="info-item">
+                            <dt>Stage Manager</dt>
+                            <dd id="stage-manager">Ridwan</dd>
+                        </div>
 
-                </a>
+                        <div class="info-item">
+                            <dt>Rundown</dt>
+                            <dd>Google Sheet</dd>
+                            <a id="rundown-button" href="#" class="outline-button" data-link-key="rundown">Open Rundown</a>
+                        </div>
+                    </div>
+                </section>
 
-                <a href="#" class="outline-button">
+                <!-- Rundown Section -->
+                <section id="rundown" class="rundown" aria-label="Rundown">
+                    <h2 class="section-title">Rundown</h2>
+                    <ul id="rundown-list" class="rundown-list">
+                        <li class="rundown-item" data-start="00:00:00">
+                            <time class="rundown-time">00:00</time>
+                            <div class="rundown-content">
+                                <h3 class="rundown-title">Opening</h3>
+                                <p class="rundown-desc">Company intro</p>
+                            </div>
+                        </li>
+                    </ul>
+                </section>
 
-                    <img src="assets/icons/instagram.svg">
+                <!-- Bottom Cards -->
+                <section id="actions" class="actions" aria-label="Bottom Cards">
+                    <div class="bottom-grid">
+                        <a href="#" class="card outline-button" data-link-key="dashboard">
+                            <div>
+                                <div class="card-title">Pusat Kendali Semesta</div>
+                                <div class="card-sub">Data &amp; Command Center</div>
+                            </div>
+                            <div class="card-arrow">→</div>
+                        </a>
 
-                    <span>Instagram</span>
+                        <a href="https://instagram.com/semestaonstage" class="card outline-button" target="_blank" rel="noreferrer">
+                            <div>
+                                <div class="card-title">Instagram</div>
+                                <div class="card-sub">@semestaonstage</div>
+                            </div>
+                            <div class="card-arrow">→</div>
+                        </a>
+                    </div>
+                </section>
 
-                </a>
+            </main>
 
-            </section>
+            <!-- Footer -->
+            <footer id="footer" class="site-footer" role="contentinfo">
+                <p>Powered by SIGNAL13</p>
+            </footer>
 
-        </main>
-
-
-        <!-- FOOTER -->
-
-        <footer>
-
-            Powered by SIGNAL13
-
-        </footer>
+        </div>
 
     </div>
 
+    <script src="assets/js/config.js"></script>
+    <script src="assets/js/ui.js"></script>
+    <script src="assets/js/clock.js"></script>
+    <script src="assets/js/dashboard.js"></script>
+    <script src="assets/js/app.js"></script>
 </body>
 
 </html>

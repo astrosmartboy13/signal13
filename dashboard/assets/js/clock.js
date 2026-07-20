@@ -21,13 +21,17 @@ const Signal13Clock = (function () {
 
     function renderClock() {
         const now = new Date();
-        const clock = document.getElementById("clock");
+        const currentTime = document.getElementById("current-time");
+        const currentDate = document.getElementById("current-date");
 
-        Signal13UI.setText("date", formatDate(now));
+        if (currentDate) {
+            currentDate.textContent = formatDate(now);
+            currentDate.setAttribute("datetime", now.toISOString());
+        }
 
-        if (clock) {
-            clock.textContent = formatTime(now);
-            clock.setAttribute("datetime", now.toISOString());
+        if (currentTime) {
+            currentTime.textContent = formatTime(now);
+            currentTime.setAttribute("datetime", now.toISOString());
         }
     }
 

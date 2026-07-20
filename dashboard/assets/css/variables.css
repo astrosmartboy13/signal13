@@ -9,17 +9,27 @@
        COLORS
     =========================== */
 
-    --color-background: #FFE500;
+    --color-background: #F7F0E2;
+
+    --color-surface: #FFFFFF;
+    --color-surface-soft: #FEF7EB;
+    --color-surface-muted: #F5E6CF;
+    --color-text: #1E1A13;
+    --color-muted: #6F685D;
+    --color-muted-soft: #A29886;
+    --color-accent: #D8B14C;
+    --color-accent-soft: rgba(216,177,76,0.16);
+    --color-accent-strong: #B48B27;
+    --color-shadow: rgba(33,24,12,0.12);
+    --color-border: rgba(33,24,12,0.12);
+    --color-border-dark: rgba(33,24,12,0.18);
+    --color-border-soft: rgba(216,177,76,0.12);
 
     --color-black: #111111;
 
     --color-white: #FFFFFF;
 
-    --color-green: #39D353;
-
-    --color-border: rgba(17,17,17,.18);
-
-    --color-border-dark: rgba(17,17,17,.45);
+    --color-green: #35C94A;
 
 
 
@@ -113,7 +123,7 @@
        BUTTON
     =========================== */
 
-    --button-height: 76px;
+    --button-height: 96px;
 
 
 

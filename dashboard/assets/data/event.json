@@ -1,11 +1,11 @@
 {
-    "project": "StageOnTime Test System",
+    "project": "Semesta On Stage",
 
-    "venue": "Taman Balekambang, Solo",
+    "venue": "Istora Senayan, Jakarta",
 
-    "eventDate": "2026-07-17",
+    "eventDate": "2026-07-19",
 
-    "duration": "09:00:00",
+    "duration": "05:30:00",
 
     "showDirector": "Aji Saputra",
 
@@ -15,7 +15,30 @@
 
     "rundownUrl": "https://docs.google.com/spreadsheets/d/1odZIRCgO82zJ1Ep2xhQwvb2TM6RrDxRAgb-LP7ufTEg/edit?usp=sharing",
 
+    "rundown": [
+        {
+            "start": "00:00",
+            "title": "Opening Ceremony",
+            "description": "Pembukaan acara dan sambutan produksi Semesta."
+        },
+        {
+            "start": "00:20",
+            "title": "Live Performance",
+            "description": "Penampilan utama dari artis undangan."
+        },
+        {
+            "start": "01:10",
+            "title": "Guest Interview",
+            "description": "Interview singkat dengan tim kreatif Semesta."
+        },
+        {
+            "start": "01:30",
+            "title": "Closing",
+            "description": "Penutupan acara dan informasi terakhir."
+        }
+    ],
+
     "productionDocsUrl": "",
 
-    "version": "0.1.0"
+    "version": "2.0.0"
 }
