@@ -1,18 +1,25 @@
 const SIGNAL13 = {
 
-    dashboard: window.location.pathname || "/",
+    dashboard: "/dashboard/",
 
-    stageTimer: "/stagetimer",
+    stageTimer: "/timer/",
 
-    backstage: "/backstage",
+    backstage: "/backstage/",
 
-    timeline: "/timeline",
+    timeline: "/timeline/",
 
-    studio: "/studio",
 
     editor: "/editor/",
 
-    rundown: ""
+    studio: "/studio/",
+
+    health: "/health",
+
+    apiStatus: "/api/status",
+
+    rundown: "",
+
+    instagram: "https://instagram.com/semestaonstage"
 
 };
 

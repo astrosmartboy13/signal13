@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIGNAL13 Admin</title>
+    <link rel="stylesheet" href="assets/css/admin.css">
+</head>
+
+<body>
+    <main class="admin-shell">
+        <header class="admin-header">
+            <div>
+                <p class="eyebrow">SIGNAL13</p>
+                <h1>Admin</h1>
+            </div>
+            <p id="status-text" class="status" data-state="loading">Loading</p>
+        </header>
+
+        <section class="panel" aria-labelledby="event-config-title">
+            <div class="panel-heading">
+                <h2 id="event-config-title">Event Configuration</h2>
+                <div class="actions">
+                    <button id="reload-button" type="button">Reload</button>
+                    <button id="save-button" type="button" disabled>Save</button>
+                </div>
+            </div>
+
+            <p id="form-summary" class="summary" role="status"></p>
+
+            <form id="event-form" novalidate>
+                <label>
+                    <span>Project</span>
+                    <input name="project" type="text" required>
+                    <small data-error-for="project"></small>
+                </label>
+
+                <label>
+                    <span>Venue</span>
+                    <input name="venue" type="text">
+                    <small data-error-for="venue"></small>
+                </label>
+
+                <label>
+                    <span>Event Date</span>
+                    <input name="eventDate" type="date">
+                    <small data-error-for="eventDate"></small>
+                </label>
+
+                <label>
+                    <span>Duration</span>
+                    <input name="duration" type="text" placeholder="05:30:00">
+                    <small data-error-for="duration"></small>
+                </label>
+
+                <label>
+                    <span>Show Director</span>
+                    <input name="showDirector" type="text">
+                    <small data-error-for="showDirector"></small>
+                </label>
+
+                <label>
+                    <span>Stage Manager</span>
+                    <input name="stageManager" type="text">
+                    <small data-error-for="stageManager"></small>
+                </label>
+
+                <label>
+                    <span>Show Status</span>
+                    <select name="showStatus">
+                        <option value="PRE-SHOW">PRE-SHOW</option>
+                        <option value="READY">READY</option>
+                        <option value="LIVE">LIVE</option>
+                        <option value="BREAK">BREAK</option>
+                        <option value="FINISHED">FINISHED</option>
+                    </select>
+                    <small data-error-for="showStatus"></small>
+                </label>
+
+                <label>
+                    <span>Rundown URL</span>
+                    <input name="rundownUrl" type="url" placeholder="https://">
+                    <small data-error-for="rundownUrl"></small>
+                </label>
+
+                <label>
+                    <span>Production Docs URL</span>
+                    <input name="productionDocsUrl" type="url" placeholder="https://">
+                    <small data-error-for="productionDocsUrl"></small>
+                </label>
+
+                <label>
+                    <span>Instagram URL</span>
+                    <input name="instagramUrl" type="url" placeholder="https://instagram.com/...">
+                    <small data-error-for="instagramUrl"></small>
+                </label>
+            </form>
+        </section>
+    </main>
+
+    <script src="assets/js/admin.js"></script>
+</body>
+
+</html>

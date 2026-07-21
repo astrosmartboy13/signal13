@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 
 <head>
     <meta charset="UTF-8">
@@ -8,23 +8,16 @@
     <title>Pusat Kendali Semesta</title>
     <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
 
-    <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
-        rel="stylesheet">
-
-    <!-- Main CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
-
-    <div class="dashboard">
-
-        <!-- Left Sidebar -->
-        <aside id="sidebar" class="sidebar" role="navigation" aria-label="Primary navigation">
+    <div class="dashboard" data-module="dashboard-shell">
+        <aside id="sidebar" class="sidebar" role="navigation" aria-label="Primary navigation" data-module="sidebar">
             <div class="brand">
                 <img src="assets/images/logo-semesta.png" alt="Semesta Logo" class="brand-logo">
                 <div class="brand-details">
@@ -33,7 +26,7 @@
                 </div>
             </div>
 
-            <nav class="nav" aria-label="Main">
+            <nav class="nav" aria-label="Main" data-module="navigation">
                 <ul>
                     <li><a href="#" class="nav-link active" data-link-key="dashboard"><img src="assets/icons/dashboard.svg" alt="Dashboard icon"><span>Dashboard</span></a></li>
                     <li><a href="#" class="nav-link" data-link-key="stageTimer"><img src="assets/icons/timer.svg" alt="Timer icon"><span>Timer</span></a></li>
@@ -44,43 +37,56 @@
                 </ul>
             </nav>
 
-            <div class="sidebar-status">
+            <div class="sidebar-bottom">
                 <div class="system-status">
-                    <span id="sidebar-status-dot" class="status-dot"></span>
-                    <div class="status-info">
-                        <span id="sidebar-status-text" class="status-text">ONLINE</span>
-                        <span class="status-sub">All systems operational</span>
+                        <span id="sidebar-status-dot" class="status-dot" aria-hidden="true"></span>
+                        <div class="status-info">
+                            <span id="sidebar-status-text" class="status-text">ONLINE</span>
+                            <span id="sidebar-status-sub" class="status-sub">All systems operational</span>
+                        </div>
                     </div>
-                </div>
-            </div>
 
-            <div class="sidebar-footer">
-                <small>Powered by SIGNAL13</small>
-                <small class="version">v2.0.0</small>
+                <div class="sidebar-footer">
+                    <small>POWERED BY SIGNAL13</small>
+                    <small id="sidebar-version" class="version">v2.0.0</small>
+                </div>
             </div>
         </aside>
 
         <div class="content">
+            <header id="header" class="site-header" role="banner" data-module="header">
+                <div class="header-identity">
+                    <button class="menu-button" type="button" aria-label="Open navigation">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    <div>
+                        <span class="header-kicker">SEMESTA</span>
+                        <strong>CONTROL CENTER</strong>
+                    </div>
+                </div>
 
-            <!-- Top Header -->
-            <header id="header" class="site-header" role="banner">
-                    <div class="header-block header-status">
-                        <span id="header-status-dot" class="status-dot" aria-hidden="true"></span>
-                        <span id="header-status-text" class="status-text">ONLINE</span>
+                <div class="header-status">
+                    <span id="header-status-dot" class="status-dot" aria-hidden="true"></span>
+                    <span id="header-status-text" class="status-text">ONLINE</span>
                     <span class="status-indicator" aria-hidden="true"></span>
                 </div>
 
-                <div class="header-block header-date">
-                    <time id="current-date" class="current-date">Sabtu, 18 Juli 2026</time>
-                </div>
-
-                <div class="header-block header-clock">
-                    <time id="current-time" class="current-time">22:45:20</time>
-                </div>
+                <time id="current-date" class="current-date">Sabtu, 18 Juli 2026</time>
+                <time id="current-time" class="current-time">22:45:20</time>
             </header>
 
-            <main id="main" class="main-content" role="main">
-                <!-- Compatibility placeholders for existing JS (visually hidden) -->
+            <section class="mobile-time-card" aria-label="Current show time" data-module="mobile-time">
+                <div>
+                    <span id="mobile-time-status-dot" class="status-dot" aria-hidden="true"></span>
+                    <span id="mobile-time-status-text" class="status-text">ONLINE</span>
+                </div>
+                <time id="mobile-current-date" class="mobile-current-date">Sabtu, 18 Juli 2026</time>
+                <time id="mobile-current-time" class="mobile-current-time">22:45:20</time>
+            </section>
+
+            <main id="main" class="main-content" role="main" data-module="main">
                 <div class="sr-only" aria-hidden="true">
                     <span id="event-name">Semesta On Stage</span>
                     <span id="project">Semesta On Stage</span>
@@ -90,110 +96,96 @@
                     <span id="stageManager">Ridwan</span>
                     <span id="status">ONLINE</span>
                     <span id="liveStatus">ONLINE</span>
+                    <span id="show-status">READY</span>
                     <span id="system-version">2.0.0</span>
                 </div>
 
-                <!-- Hero Card -->
-                <section id="hero" class="hero" aria-labelledby="project-title">
-                    <div class="hero-bg" role="img" aria-label="Background image placeholder"></div>
-
+                <section id="hero" class="hero" aria-labelledby="project-title" data-module="hero">
+                    <div class="hero-bg" role="img" aria-label="Concert stage background"></div>
                     <div class="hero-card">
                         <div class="hero-left">
                             <span class="project-badge">PROJECT</span>
-                            <h1 id="project-title" class="project-title">EUFORIA ART 11</h1>
+                            <h1 id="project-title" class="project-title">SEMESTA ON STAGE</h1>
                             <p class="project-sub">SEMESTA ON STAGE</p>
-                            <p class="hero-venue">Venue: <span id="venue">Jakarta</span></p>
+                            <p class="hero-venue">Venue: <span id="venue">Istora Senayan, Jakarta</span></p>
+                            <p class="show-status-line">Show Status <strong id="show-status-badge" class="show-status-badge" data-status="ready">READY</strong></p>
                         </div>
 
-                        <div class="hero-center">
-                            <p class="hero-duration">Total Duration<br><strong id="total-duration">01:32:15</strong></p>
-                            <p class="hero-day">Show Day<br><strong id="show-date">2026-07-18</strong></p>
+                        <div class="hero-meta">
+                            <p>Total Duration <strong id="total-duration">05:30:00</strong></p>
+                            <p>Show Day <strong id="show-date">19 Juli 2026</strong></p>
                         </div>
 
-                        <div class="hero-right">
-                            <img src="assets/images/logo-semesta.png" alt="Semesta Logo" class="hero-logo-large">
-                        </div>
+                        <img src="assets/images/logo-semesta.png" alt="Semesta Logo" class="hero-logo-large">
                     </div>
                 </section>
 
-                <!-- Quick Access -->
-                <section id="quick-access" class="quick-access" aria-label="Quick Access">
+                <section id="quick-access" class="quick-access" aria-label="Quick Access" data-module="quick-access">
                     <h2 class="section-title">Quick Access</h2>
                     <div class="quick-grid">
-                        <a href="#" class="card launcher-button" data-link-key="stageTimer"><img src="assets/icons/timer.svg" alt="Timer" class="launcher-icon"><span>Timer</span></a>
-                        <a href="#" class="card launcher-button" data-link-key="backstage"><img src="assets/icons/backstage.svg" alt="Backstage" class="launcher-icon"><span>Backstage</span></a>
-                        <a href="#" class="card launcher-button" data-link-key="timeline"><img src="assets/icons/timeline.svg" alt="Timeline" class="launcher-icon"><span>Timeline</span></a>
-                        <a href="#" class="card launcher-button" data-link-key="studio"><img src="assets/icons/studio.svg" alt="Studio" class="launcher-icon"><span>Studio</span></a>
-                        <a href="#" class="card launcher-button" data-link-key="editor"><img src="assets/icons/editor.svg" alt="Editor" class="launcher-icon"><span>Editor</span></a>
+                        <a href="#" class="card launcher-button" data-link-key="stageTimer"><img src="assets/icons/timer.svg" alt="" class="launcher-icon"><span>Timer</span><small>Show clock</small></a>
+                        <a href="#" class="card launcher-button" data-link-key="backstage"><img src="assets/icons/backstage.svg" alt="" class="launcher-icon"><span>Backstage</span><small>Crew notes</small></a>
+                        <a href="#" class="card launcher-button" data-link-key="timeline"><img src="assets/icons/timeline.svg" alt="" class="launcher-icon"><span>Timeline</span><small>Run order</small></a>
+                        <a href="#" class="card launcher-button" data-link-key="studio"><img src="assets/icons/studio.svg" alt="" class="launcher-icon"><span>Studio</span><small>Assets</small></a>
+                        <a href="#" class="card launcher-button" data-link-key="editor"><img src="assets/icons/editor.svg" alt="" class="launcher-icon"><span>Editor</span><small>Edit mode</small></a>
                     </div>
                 </section>
 
-                <!-- Information Card -->
-                <section id="production-info" class="production-info" aria-label="Production Information">
-                    <h2 class="section-title">Information</h2>
-                    <div class="info-grid">
+                <section id="production-info" class="production-info" aria-label="Production Information" data-module="production-info">
+                    <h2 class="section-title">Production Information</h2>
+                    <dl class="info-grid">
                         <div class="info-item">
                             <dt>Show Director</dt>
                             <dd id="show-director">Aji Saputra</dd>
                         </div>
-
                         <div class="info-item">
                             <dt>Stage Manager</dt>
                             <dd id="stage-manager">Ridwan</dd>
                         </div>
-
                         <div class="info-item">
                             <dt>Rundown</dt>
-                            <dd>Google Sheet</dd>
-                            <a id="rundown-button" href="#" class="outline-button" data-link-key="rundown">Open Rundown</a>
+                            <dd><a id="rundown-button" href="#" class="rundown-button" data-link-key="rundown">Open Rundown</a></dd>
                         </div>
-                    </div>
+                    </dl>
                 </section>
 
-                <!-- Rundown Section -->
-                <section id="rundown" class="rundown" aria-label="Rundown">
-                    <h2 class="section-title">Rundown</h2>
-                    <ul id="rundown-list" class="rundown-list">
-                        <li class="rundown-item" data-start="00:00:00">
-                            <time class="rundown-time">00:00</time>
-                            <div class="rundown-content">
-                                <h3 class="rundown-title">Opening</h3>
-                                <p class="rundown-desc">Company intro</p>
-                            </div>
-                        </li>
-                    </ul>
-                </section>
-
-                <!-- Bottom Cards -->
-                <section id="actions" class="actions" aria-label="Bottom Cards">
+                <section id="actions" class="actions" aria-label="Bottom Actions" data-module="actions">
                     <div class="bottom-grid">
-                        <a href="#" class="card outline-button" data-link-key="dashboard">
+                        <a href="#" class="card action-card" data-link-key="dashboard">
+                            <img src="assets/icons/dashboard.svg" alt="" class="action-icon">
                             <div>
-                                <div class="card-title">Pusat Kendali Semesta</div>
+                                <div class="card-title">Kendali Semesta</div>
                                 <div class="card-sub">Data &amp; Command Center</div>
                             </div>
-                            <div class="card-arrow">→</div>
                         </a>
 
-                        <a href="https://instagram.com/semestaonstage" class="card outline-button" target="_blank" rel="noreferrer">
+                        <a href="https://instagram.com/semestaonstage" class="card action-card" target="_blank" rel="noreferrer" data-link-key="instagram">
+                            <img src="assets/icons/studio.svg" alt="" class="action-icon">
                             <div>
                                 <div class="card-title">Instagram</div>
                                 <div class="card-sub">@semestaonstage</div>
                             </div>
-                            <div class="card-arrow">→</div>
                         </a>
                     </div>
                 </section>
 
+                <section id="system-status" class="mobile-system-status" aria-label="System Status" data-module="system-status">
+                    <span id="mobile-status-dot" class="status-dot" aria-hidden="true"></span>
+                    <span id="mobile-status-text" class="status-text">ONLINE</span>
+                    <span id="mobile-status-sub">All systems operational</span>
+                </section>
             </main>
 
-            <!-- Footer -->
-            <footer id="footer" class="site-footer" role="contentinfo">
-                <p>Powered by SIGNAL13</p>
+            <footer id="footer" class="site-footer" role="contentinfo" data-module="footer">
+                <p>POWERED BY SIGNAL13</p>
+                <div class="footer-meta" aria-label="System version information">
+                    <span>SIGNAL13 <strong id="signal13-version">3.0</strong></span>
+                    <span>Dashboard <strong id="dashboard-version">2.0.0</strong></span>
+                    <span>Build <strong id="build-version">Sprint 03A</strong></span>
+                    <span id="copyright">2026 SIGNAL13</span>
+                </div>
             </footer>
-
         </div>
-
     </div>
 
     <script src="assets/js/config.js"></script>

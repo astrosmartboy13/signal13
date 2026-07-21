@@ -30,27 +30,49 @@ const Signal13UI = (function () {
             return "offline";
         }
 
-        if (value === "warning") {
-            return "warning";
-        }
-
         return "unknown";
     }
 
     function setStatus(selector, status) {
+        const elements = document.querySelectorAll(selector);
+
+        if (!elements.length) {
+            return;
+        }
+
+        elements.forEach(function (element) {
+            element.dataset.status = normalizeStatus(status);
+        });
+    }
+
+    function setTextBySelector(selector, value, fallback) {
+        const elements = document.querySelectorAll(selector);
+
+        if (!elements.length) {
+            return;
+        }
+
+        elements.forEach(function (element) {
+            element.textContent = value || fallback || "";
+        });
+    }
+
+    function setShowStatus(selector, status) {
         const element = document.querySelector(selector);
 
         if (!element) {
             return;
         }
 
-        element.dataset.status = normalizeStatus(status);
+        element.dataset.status = String(status || "ready").trim().toLowerCase();
     }
 
     return {
         setText: setText,
+        setTextBySelector: setTextBySelector,
         setDateTime: setDateTime,
         normalizeStatus: normalizeStatus,
-        setStatus: setStatus
+        setStatus: setStatus,
+        setShowStatus: setShowStatus
     };
 })();

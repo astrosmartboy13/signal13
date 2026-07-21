@@ -23,6 +23,8 @@ const Signal13Clock = (function () {
         const now = new Date();
         const currentTime = document.getElementById("current-time");
         const currentDate = document.getElementById("current-date");
+        const mobileCurrentTime = document.getElementById("mobile-current-time");
+        const mobileCurrentDate = document.getElementById("mobile-current-date");
 
         if (currentDate) {
             currentDate.textContent = formatDate(now);
@@ -32,6 +34,16 @@ const Signal13Clock = (function () {
         if (currentTime) {
             currentTime.textContent = formatTime(now);
             currentTime.setAttribute("datetime", now.toISOString());
+        }
+
+        if (mobileCurrentDate) {
+            mobileCurrentDate.textContent = formatDate(now);
+            mobileCurrentDate.setAttribute("datetime", now.toISOString());
+        }
+
+        if (mobileCurrentTime) {
+            mobileCurrentTime.textContent = formatTime(now);
+            mobileCurrentTime.setAttribute("datetime", now.toISOString());
         }
     }
 

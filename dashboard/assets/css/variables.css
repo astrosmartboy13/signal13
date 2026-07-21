@@ -1,146 +1,67 @@
 /* ==========================================================
    SIGNAL13 Dashboard
-   Design System v1.0
+   Design System - Sprint 03A Design Lock
 ========================================================== */
 
 :root {
-
-    /* ===========================
-       COLORS
-    =========================== */
-
-    --color-background: #F7F0E2;
-
-    --color-surface: #FFFFFF;
-    --color-surface-soft: #FEF7EB;
-    --color-surface-muted: #F5E6CF;
-    --color-text: #1E1A13;
-    --color-muted: #6F685D;
-    --color-muted-soft: #A29886;
-    --color-accent: #D8B14C;
-    --color-accent-soft: rgba(216,177,76,0.16);
-    --color-accent-strong: #B48B27;
-    --color-shadow: rgba(33,24,12,0.12);
-    --color-border: rgba(33,24,12,0.12);
-    --color-border-dark: rgba(33,24,12,0.18);
-    --color-border-soft: rgba(216,177,76,0.12);
-
-    --color-black: #111111;
-
+    --color-background: #050505;
+    --color-background-soft: #0A0A0A;
+    --color-surface: rgba(18, 18, 18, 0.92);
+    --color-surface-soft: rgba(255, 255, 255, 0.055);
+    --color-surface-muted: rgba(255, 255, 255, 0.085);
+    --color-text: #F8F5E8;
+    --color-muted: #B8B3A8;
+    --color-muted-soft: #78736A;
+    --color-accent: #F2C230;
+    --color-accent-soft: rgba(242, 194, 48, 0.16);
+    --color-accent-strong: #FFD84A;
+    --color-shadow: rgba(0, 0, 0, 0.42);
+    --color-border: rgba(255, 255, 255, 0.12);
+    --color-border-dark: rgba(255, 255, 255, 0.18);
+    --color-border-soft: rgba(242, 194, 48, 0.22);
+    --color-black: #050505;
     --color-white: #FFFFFF;
-
     --color-green: #35C94A;
-
-
-
-    /* ===========================
-       TYPOGRAPHY
-    =========================== */
+    --color-red: #E03F3F;
+    --color-gray: #8F8A80;
+    --color-blue: #3B82F6;
 
     --font-family: "Inter", sans-serif;
-
     --font-light: 300;
-
     --font-regular: 400;
-
     --font-medium: 500;
-
     --font-semibold: 600;
-
     --font-bold: 700;
-
     --font-extrabold: 800;
+    --font-black: 900;
 
-
-
-    /* ===========================
-       FONT SIZE
-    =========================== */
-
-    --text-xs: 12px;
-
-    --text-sm: 14px;
-
-    --text-md: 16px;
-
+    --text-xs: 11px;
+    --text-sm: 13px;
+    --text-md: 15px;
     --text-lg: 18px;
-
     --text-xl: 24px;
-
     --text-2xl: 32px;
-
     --text-3xl: 48px;
-
     --text-4xl: 64px;
 
+    --container-width: 1500px;
 
-
-    /* ===========================
-       CONTAINER
-    =========================== */
-
-    --container-width: 1400px;
-
-
-
-    /* ===========================
-       SPACING
-    =========================== */
-
-    --space-1: 8px;
-
-    --space-2: 12px;
-
-    --space-3: 16px;
-
-    --space-4: 24px;
-
-    --space-5: 32px;
-
-    --space-6: 48px;
-
-    --space-7: 64px;
-
-    --space-8: 96px;
-
-    --space-9: 120px;
-
-
-
-    /* ===========================
-       BORDER RADIUS
-    =========================== */
+    --space-1: 6px;
+    --space-2: 10px;
+    --space-3: 14px;
+    --space-4: 20px;
+    --space-5: 28px;
+    --space-6: 40px;
+    --space-7: 56px;
+    --space-8: 80px;
 
     --radius-sm: 8px;
-
     --radius-md: 12px;
-
     --radius-lg: 18px;
+    --radius-xl: 26px;
 
-
-
-    /* ===========================
-       BUTTON
-    =========================== */
-
-    --button-height: 96px;
-
-
-
-    /* ===========================
-       TRANSITION
-    =========================== */
-
-    --transition: .25s ease;
-
-
-
-    /* ===========================
-       Z INDEX
-    =========================== */
-
+    --button-height: clamp(76px, 5.4vw, 104px);
+    --transition: .22s ease;
     --z-header: 100;
-
     --z-modal: 1000;
-
 }

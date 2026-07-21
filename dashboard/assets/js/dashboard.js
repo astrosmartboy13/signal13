@@ -8,9 +8,20 @@ const Signal13Dashboard = (function () {
         duration: "00:00:00",
         showDirector: "TBA",
         stageManager: "TBA",
-        status: "ONLINE",
+        status: "unknown",
+        showStatus: "READY",
         rundownUrl: "",
         rundown: [],
+        systemStatus: [
+            { service: "Dashboard", status: "online" },
+            { service: "Gateway", status: "unknown" },
+            { service: "OnTime", status: "unknown" },
+            { service: "Tunnel", status: "unknown" }
+        ],
+        signal13Version: "3.0",
+        dashboardVersion: "2.0.0",
+        buildVersion: "Sprint 03A",
+        copyright: "2026 SIGNAL13",
         version: "2.0.0"
     };
 
@@ -27,6 +38,10 @@ const Signal13Dashboard = (function () {
     function resolveQuickAccessUrl(key, data) {
         if (key === "rundown" && data.rundownUrl) {
             return data.rundownUrl;
+        }
+
+        if (key === "instagram" && data.instagramUrl) {
+            return data.instagramUrl;
         }
 
         if (!window.SIGNAL13 || !window.SIGNAL13[key]) {
@@ -58,48 +73,15 @@ const Signal13Dashboard = (function () {
         });
     }
 
-    function renderRundownItems(items) {
-        const list = document.getElementById("rundown-list");
-        if (!list) {
-            return;
+    function normalizeShowStatus(status) {
+        const value = String(status || "READY").trim().toUpperCase();
+        const allowedStatus = ["PRE-SHOW", "READY", "LIVE", "BREAK", "FINISHED"];
+
+        if (allowedStatus.indexOf(value) === -1) {
+            return "READY";
         }
 
-        list.innerHTML = "";
-
-        if (!Array.isArray(items) || items.length === 0) {
-            const emptyItem = document.createElement("li");
-            emptyItem.className = "rundown-item empty";
-            emptyItem.textContent = "Rundown items are not available yet.";
-            list.appendChild(emptyItem);
-            return;
-        }
-
-        items.forEach(function (item) {
-            const listItem = document.createElement("li");
-            listItem.className = "rundown-item";
-            listItem.dataset.start = item.start || "";
-
-            const time = document.createElement("time");
-            time.className = "rundown-time";
-            time.textContent = item.start || item.time || "--:--";
-
-            const content = document.createElement("div");
-            content.className = "rundown-content";
-
-            const title = document.createElement("h3");
-            title.className = "rundown-title";
-            title.textContent = item.title || "Untitled segment";
-
-            const desc = document.createElement("p");
-            desc.className = "rundown-desc";
-            desc.textContent = item.description || "Detail rundown belum tersedia.";
-
-            content.appendChild(title);
-            content.appendChild(desc);
-            listItem.appendChild(time);
-            listItem.appendChild(content);
-            list.appendChild(listItem);
-        });
+        return value;
     }
 
     function renderQuickAccess(data) {
@@ -108,18 +90,23 @@ const Signal13Dashboard = (function () {
         links.forEach(function (link) {
             const key = link.dataset.linkKey;
             const href = resolveQuickAccessUrl(key, data);
+            const isExternal = /^https?:\/\//i.test(href);
 
             link.setAttribute("href", href);
 
-            if (href && href !== "#") {
+            if (isExternal) {
                 link.setAttribute("target", "_blank");
                 link.setAttribute("rel", "noreferrer noopener");
+            } else {
+                link.removeAttribute("target");
+                link.removeAttribute("rel");
             }
         });
     }
 
     function renderDashboard(data) {
         const eventData = Object.assign({}, fallbackData, data);
+        const showStatus = normalizeShowStatus(eventData.showStatus);
 
         Signal13UI.setText("event-name", eventData.project, fallbackData.project);
         Signal13UI.setText("project", eventData.project, fallbackData.project);
@@ -134,17 +121,16 @@ const Signal13Dashboard = (function () {
         Signal13UI.setText("show-director", eventData.showDirector, fallbackData.showDirector);
         Signal13UI.setText("stageManager", eventData.stageManager, fallbackData.stageManager);
         Signal13UI.setText("stage-manager", eventData.stageManager, fallbackData.stageManager);
-        Signal13UI.setText("header-status-text", eventData.status, fallbackData.status);
-        Signal13UI.setText("sidebar-status-text", eventData.status, fallbackData.status);
-        Signal13UI.setText("status", eventData.status, fallbackData.status);
-        Signal13UI.setText("liveStatus", eventData.status, fallbackData.status);
+        Signal13UI.setText("show-status", showStatus, fallbackData.showStatus);
+        Signal13UI.setText("show-status-badge", showStatus, fallbackData.showStatus);
         Signal13UI.setText("system-version", eventData.version, fallbackData.version);
+        Signal13UI.setText("sidebar-version", "v" + eventData.dashboardVersion, "v" + fallbackData.dashboardVersion);
+        Signal13UI.setText("signal13-version", eventData.signal13Version, fallbackData.signal13Version);
+        Signal13UI.setText("dashboard-version", eventData.dashboardVersion, fallbackData.dashboardVersion);
+        Signal13UI.setText("build-version", eventData.buildVersion, fallbackData.buildVersion);
+        Signal13UI.setText("copyright", eventData.copyright, fallbackData.copyright);
 
-        Signal13UI.setStatus(".status-indicator", eventData.status);
-        Signal13UI.setStatus("#header-status-dot", eventData.status);
-        Signal13UI.setStatus("#sidebar-status-dot", eventData.status);
-        Signal13UI.setStatus("#liveStatus", eventData.status);
-        renderRundownItems(eventData.rundown || []);
+        Signal13UI.setShowStatus("#show-status-badge", showStatus);
         renderQuickAccess(eventData);
     }
 
